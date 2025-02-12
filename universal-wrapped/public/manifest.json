@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Paperclip Tracker",
+    "version": "0.0.1",
+    "description": "Get more insights into your paperclip adventure",
+    "permissions": ["scripting", "storage"],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "host_permissions": ["https://www.decisionproblem.com/paperclips/index2.html"],
+    "content_scripts": [
+        {
+            "matches": ["https://www.decisionproblem.com/paperclips/index2.html"],
+            "js": ["spy.js"],
+            "world": "MAIN"
+        },
+        {
+            "matches": ["https://www.decisionproblem.com/paperclips/index2.html"],
+            "js": ["writer.js"]
+        }
+    ]
+  }
