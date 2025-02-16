@@ -12,7 +12,6 @@ function App() {
   let updateCount = () => {
     chrome.storage.local.get(trackedVars, function(items) {
       setDataMap(items);
-      console.log(items);
     });
   }
 
@@ -25,7 +24,7 @@ function App() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       updateCount();
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);

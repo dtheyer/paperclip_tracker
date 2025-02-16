@@ -16,10 +16,6 @@ export default defineConfig({
           dest: '.',
         },
         {
-          src: 'src/content_scripts/injector.js',
-          dest: '.',
-        },
-        {
           src: 'src/content_scripts/writer.js',
           dest: '.',
         },

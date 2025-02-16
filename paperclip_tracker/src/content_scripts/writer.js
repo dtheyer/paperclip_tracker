@@ -25,15 +25,12 @@ document.addEventListener('universalWrapped_connectExtension', function(e) {
         'margin',
         'demand',
     ]
-    console.log("---------------------")
-    console.log(e.detail)
     time = Date.now()
     chrome.storage.local.get(trackedVars, data => {
         const updatedVals = {}
         trackedVars.forEach((key) => {
             var keyArr = isIterable(data[key]) ? data[key] : [];
             var newVal = e.detail[key]
-            console.log("Key", key, "value", newVal, e.detail);
             updatedVals[key] = [...keyArr, [time, newVal]]
         });
         chrome.storage.local.set(updatedVals);
